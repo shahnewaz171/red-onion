@@ -2,8 +2,21 @@
     background-image: url(../../images/bannerBackground-min.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 75vh;
+    height: 60vh;
     background-position: 50%;
-    margin-left: 4rem;
-    margin-right: 4rem;
+}
+.search-box{
+    position: relative;
+    margin-left: -4rem;
+}
+.search-btn{
+    position: absolute;
+    top: 0;
+    right: -74px;
+    height: 100%;
+}
+.search-input{
+    border: 1px solid #fff !important;
+    border-radius: 20px;
+    padding: 8px 20px !important;
 }

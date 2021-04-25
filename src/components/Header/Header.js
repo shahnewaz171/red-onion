@@ -14,15 +14,17 @@ const Header = () => {
            <Navbar></Navbar>
            <div>
                <div className="">
-                   <section className=" banner d-flex justify-content-center align-items-center">
+                   <section className=" banner d-flex justify-content-center align-items-center text-center">
                         <div>
                             <h1>Best food waiting for you belly</h1>
-                            <div className="col-md-6">
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input name="search" ref={register({ required: true })} placeholder="Search food items" className="form-control"/>
-                                    <input type="submit" className="btn btn-style px-4" />
-                                    {errors.search && <span className="d-block">This field is required</span>}
-                                </form>
+                            <div className="col-6 col-md-6 my-4 mx-auto">
+                                <div className="search-box">
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <input name="search" ref={register({ required: true })} placeholder="Search food items" className="form-control search-input"/>
+                                        <input type="submit" className="btn btn-style px-4 search-btn" />
+                                        {errors.search && <span className="d-block">This field is required</span>}
+                                    </form>
+                                </div>
                             </div>
                         </div>
                    </section>
