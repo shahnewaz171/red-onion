@@ -1,0 +1,10 @@
+footer{
+    background-color: #191919;
+}
+.footer-top img{
+    height: 50px;
+}
+.footer-top li a,
+.footer-bottom li a{
+    color: #fff !important;
+}

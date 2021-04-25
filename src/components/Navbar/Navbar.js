@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo2-min.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 

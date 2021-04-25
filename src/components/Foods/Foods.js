@@ -19,17 +19,17 @@ const Foods = () => {
             <nav>
                 <ul className="nav justify-content-center item-title">
                     <li onClick={() => setFoodType("breakfast")} className="nav-item">
-                        <Link to="#" className={foodType === 'breakfast' ? "nav-link active" : "nav-link"}>
+                        <Link to="#" className={foodType === 'breakfast' ? "nav-link active m-0" : "nav-link m-0"}>
                             Breakfast
                         </Link>
                     </li>
                     <li onClick={() => setFoodType("lunch")} className="nav-item">
-                        <Link to="#" className={foodType === 'lunch' ? "nav-link active" : "nav-link"}>
+                        <Link to="#" className={foodType === 'lunch' ? "nav-link active m-0" : "nav-link m-0"}>
                             Lunch
                         </Link>
                     </li>
                     <li onClick={() => setFoodType("dinner")} className="nav-item">
-                        <Link to="#" className={foodType === 'dinner' ? "nav-link active" : "nav-link"}>
+                        <Link to="#" className={foodType === 'dinner' ? "nav-link active m-0" : "nav-link m-0"}>
                             Dinner
                         </Link>
                     </li>
@@ -42,7 +42,7 @@ const Foods = () => {
                 }
             </div>
 
-            <div className="text-center">
+            <div className="text-center pb-4">
                 <button disabled className="btn btn-secondary">Checkout Your Food</button>
             </div>
         </div>
