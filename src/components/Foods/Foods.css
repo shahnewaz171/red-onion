@@ -3,7 +3,7 @@
     font-weight: 500;
     transition: all .3s;
 }
-.item-title li a:hover{
+.item-title .active{
     color: #f91944 !important;
 }
 .item-title .active:after{

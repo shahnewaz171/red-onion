@@ -7,8 +7,10 @@
 }
 .card{
     border: none;
-    box-shadow: 0.9px 10px 40px #dadada;
     border-radius: 10px;
+}
+.card:hover{
+    box-shadow: 0.9px 10px 40px #dadada;
 }
 .card-title{
     font-weight: 600;

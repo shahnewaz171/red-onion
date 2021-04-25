@@ -49,3 +49,5 @@ let breakFast = [
         "img": "https://i.ibb.co/wyjRddZ/baked-chicken.png"
     }
 ]
+
+export default breakFast;
