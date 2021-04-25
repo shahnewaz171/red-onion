@@ -1,0 +1,9 @@
+.banner{
+    background-image: url(../../images/bannerBackground-min.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
+    background-position: 50%;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}

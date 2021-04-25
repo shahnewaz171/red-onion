@@ -1,0 +1,29 @@
+.btn-style{
+    background-color: #f91944;
+    border-color: #ec1842;
+    color: #fff;
+    border-radius: 20px;
+    transition: all .3s;
+}
+.btn-style:hover {
+    background-color: #da173e;
+    border-color: #ce163b;
+    color: #fff;
+}
+.nav-link{
+    margin: 0px 15px;
+}
+.nav-link span{
+    color: #000 !important;
+    font-weight: 600;
+    font-size: 18px;
+}
+.cartIcon{
+    margin-left: 5px;
+    color: black;
+    transition: all .3s;
+}
+.cartIcon:hover,
+.nav-link span:hover{
+    color: rgb(77, 76, 76) !important;
+}
