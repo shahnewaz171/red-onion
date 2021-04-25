@@ -1,0 +1,16 @@
+.item-title li a{
+    color: #000 !important;
+    font-weight: 500;
+    transition: all .3s;
+}
+.item-title li a:hover{
+    color: #f91944 !important;
+}
+.item-title .active:after{
+    content: "";
+    width: 80%;
+    height: 2px;
+    background-color: #c90d33;
+    display: block;
+    margin: 0px auto;
+}

@@ -1,0 +1,26 @@
+.food-link{
+    text-decoration: none;
+    color: #000;
+}
+.food-link:hover{
+    color: #000;
+}
+.card{
+    border: none;
+    box-shadow: 0.9px 10px 40px #dadada;
+    border-radius: 10px;
+}
+.card-title{
+    font-weight: 600;
+    color: rgb(41, 41, 41);
+}
+.card-text{
+    color: rgb(90, 90, 90);
+}
+.food-link span{
+    font-weight: 600;
+    font-size: 18px;
+}
+.card-img{
+    padding: 10px 70px;
+}

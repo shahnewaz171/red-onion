@@ -21,8 +21,7 @@ const Header = () => {
                                 <div className="search-box">
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <input name="search" ref={register({ required: true })} placeholder="Search food items" className="form-control search-input"/>
-                                        <input type="submit" className="btn btn-style px-4 search-btn" />
-                                        {errors.search && <span className="d-block">This field is required</span>}
+                                        <input type="submit" className="btn btn-style px-4 search-btn" value="Search"/>
                                     </form>
                                 </div>
                             </div>

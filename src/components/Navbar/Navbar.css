@@ -27,3 +27,6 @@
 .nav-link span:hover{
     color: rgb(77, 76, 76) !important;
 }
+.nav-pad{
+    padding: 10px 0px;
+}
