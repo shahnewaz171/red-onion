@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import './Food.css';
+import { Link } from 'react-router-dom';
 
 
 const Food = (props) => {
@@ -26,7 +27,7 @@ const Food = (props) => {
                             <FontAwesomeIcon icon={faShoppingCart} />
                             <span className="ms-1">Add</span>
                         </button>
-                        <button className="btn btn-style px-3 ms-4">Proceed Checkout</button>
+                        <Link to="/shipment"><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
                     </div>
                     <div className="more-images mt-5 mb-5">
                         <img src={img} className="active-single-img small-img" height="150px" alt="img"/>

@@ -5,6 +5,7 @@ import './App.css';
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Shipment from "./components/Shipment/Shipment";
 
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/shipment">
+          <Shipment />
         </Route>
         <Route path="/food/:foodKey">
           <FoodDetails />
