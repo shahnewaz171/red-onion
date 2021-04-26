@@ -4,11 +4,11 @@ import './FoodItem.css';
 
 
 const FoodItem = (props) => {
-    const {name, title, price, img} = props.food;
-    console.log(name);
+    const {name, title, price, img, key} = props.food;
+
     return (
         <div className="col-md-4 mb-4">
-            <Link to="#" className="food-link">
+            <Link to={`/food/${key}`} className="food-link">
                 <div className="card text-center">
                     <div className="card-img">
                         <img src={img} className="img-fluid card-img-top" alt="b1"></img>

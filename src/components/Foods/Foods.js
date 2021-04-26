@@ -6,7 +6,7 @@ import './Foods.css';
 
 const Foods = () => {
     const [foods, setFoods] = useState([]);
-    const [foodType, setFoodType] = useState("breakfast");
+    const [foodType, setFoodType] = useState("lunch");
 
     useEffect(() => {
         setFoods(fakeData);

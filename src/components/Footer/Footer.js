@@ -53,7 +53,7 @@ const Footer = () => {
                             <Link to="#">Privacy Policy.</Link>
                         </li>
                         <li className="list-inline-item ms-3">
-                            <Link to="#q">Terms of Use</Link>
+                            <Link to="#">Terms of Use</Link>
                         </li>
                         <li className="list-inline-item ms-3">
                             <Link to="#">Pricing</Link>

@@ -30,3 +30,10 @@
 .nav-pad{
     padding: 10px 0px;
 }
+.nav-shadow{
+    box-shadow: 0px 1px 3px #0000001f;
+    background-color: white;
+}
+.navbar{
+    border-bottom: 1px solid #efeeee;
+}

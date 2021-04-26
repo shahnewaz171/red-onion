@@ -6,7 +6,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "50.00",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/d2ZLncR/french-fries-with-cheese.png"
+        "img": "https://i.ibb.co/d2ZLncR/french-fries-with-cheese.png",
+        "img2": "https://i.ibb.co/YX9DMJH/garlic-butter-baked-salmon.png"
     },
     {
         "key": "B023XN",
@@ -15,7 +16,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "23.99",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/3Yc6b74/pork-tenderloin-with-quinoa-pilaf.png"
+        "img": "https://i.ibb.co/3Yc6b74/pork-tenderloin-with-quinoa-pilaf.png",
+        "img2": "https://i.ibb.co/2cKnFsX/royal-kabob.png"
     },
     {
         "key": "B023XO",
@@ -24,7 +26,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "9.50",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/YX9DMJH/garlic-butter-baked-salmon.png"
+        "img": "https://i.ibb.co/YX9DMJH/garlic-butter-baked-salmon.png",
+        "img2": "https://i.ibb.co/QmzR0Md/lemony-salmon-piccata-family.png"
     },
     {
         "key": "B023XP",
@@ -33,7 +36,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "23.50",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/2cKnFsX/royal-kabob.png"
+        "img": "https://i.ibb.co/2cKnFsX/royal-kabob.png",
+        "img2": "https://i.ibb.co/d2ZLncR/french-fries-with-cheese.png"
     },
     {
         "key": "B023XQ",
@@ -42,7 +46,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "38.75",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/QmzR0Md/lemony-salmon-piccata-family.png"
+        "img": "https://i.ibb.co/QmzR0Md/lemony-salmon-piccata-family.png",
+        "img2": "https://i.ibb.co/jVJ8ybB/salmon-with-grapefruit-and-lentil-salad.png"
     },
     {
         "key": "B023XR",
@@ -51,7 +56,8 @@ let dinner = [
         "title": "How yummy the dinner is!",
         "price": "5.00",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/jVJ8ybB/salmon-with-grapefruit-and-lentil-salad.png"
+        "img": "https://i.ibb.co/jVJ8ybB/salmon-with-grapefruit-and-lentil-salad.png",
+        "img2": "https://i.ibb.co/3Yc6b74/pork-tenderloin-with-quinoa-pilaf.png"
     },
 ]
 export default dinner;

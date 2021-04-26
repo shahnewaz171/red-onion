@@ -6,7 +6,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "9.50",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/X2xtvMK/bagel-and-cream-cheese.png"
+        "img": "https://i.ibb.co/X2xtvMK/bagel-and-cream-cheese.png",
+        "img2": "https://i.ibb.co/wy48cmx/breakfast-sandwich.png"
     }, {
         "key": "B023XB",
         "category": "breakfast",
@@ -14,7 +15,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "12.99",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/nPzwSj8/toast-croissant-fried-egg.png"
+        "img": "https://i.ibb.co/nPzwSj8/toast-croissant-fried-egg.png",
+        "img2": "https://i.ibb.co/XtZMn0Y/full-breakfast-fried-egg-toast-brunch.png"
     }, {
         "key": "B023XC",
         "category": "breakfast",
@@ -22,7 +24,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "18.00",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/wy48cmx/breakfast-sandwich.png"
+        "img": "https://i.ibb.co/wy48cmx/breakfast-sandwich.png",
+        "img2": "https://i.ibb.co/wyjRddZ/baked-chicken.png"
     }, {
         "key": "B023XD",
         "category": "breakfast",
@@ -30,7 +33,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "8.50",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/Q9gPgNP/eggs-benedict.png"
+        "img": "https://i.ibb.co/Q9gPgNP/eggs-benedict.png",
+        "img2": "https://i.ibb.co/nPzwSj8/toast-croissant-fried-egg.png"
     }, {
         "key": "B023XE",
         "category": "breakfast",
@@ -38,7 +42,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "14.00",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/XtZMn0Y/full-breakfast-fried-egg-toast-brunch.png"
+        "img": "https://i.ibb.co/XtZMn0Y/full-breakfast-fried-egg-toast-brunch.png",
+        "img2": "https://i.ibb.co/wy48cmx/breakfast-sandwich.png"
     }, {
         "key": "B023XF",
         "category": "breakfast",
@@ -46,7 +51,8 @@ let breakFast = [
         "title": "How yummy the breakfast is!",
         "price": "30.99",
         "foodDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "img": "https://i.ibb.co/wyjRddZ/baked-chicken.png"
+        "img": "https://i.ibb.co/wyjRddZ/baked-chicken.png",
+        "img2": "https://i.ibb.co/Q9gPgNP/eggs-benedict.png"
     }
 ]
 
