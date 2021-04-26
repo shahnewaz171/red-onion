@@ -5,6 +5,10 @@ a{
     font-weight: 500;
     font-size: 16px;
     color: #7C98F9;
+    transition: all .3s;
+}
+.more-title:hover{
+    color: #325df8;
 }
 .arrowIcon{
     font-size: 1.3em;

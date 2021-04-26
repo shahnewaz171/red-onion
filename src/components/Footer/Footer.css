@@ -7,4 +7,10 @@ footer{
 .footer-top li a,
 .footer-bottom li a{
     color: #fff !important;
+    transition: all .3s;
+}
+
+.footer-top li a:hover,
+.footer-bottom li a:hover{
+    color: #ce1d40 !important;
 }

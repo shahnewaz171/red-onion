@@ -9,7 +9,9 @@ const Footer = () => {
             <div className="container">
                 <div className="row footer-top py-5">
                     <div className="col-md-6 mb-5">
-                        <img src={footerLogo} className="img-fluid" alt="logo"/>
+                        <Link to="#">
+                            <img src={footerLogo} className="img-fluid" alt="logo"/>
+                        </Link>
                     </div>
                     <div className="col-6 col-md-3">
                         <ul className="list-unstyled">
