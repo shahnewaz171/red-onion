@@ -16,32 +16,32 @@ const Footer = () => {
                     <div className="col-6 col-md-3">
                         <ul className="list-unstyled">
                             <li>
-                                <Link to="/about">About Online Food</Link>
+                                <Link to="#">About Online Food</Link>
                             </li>
                             <li>
-                                <Link to="/blog">Read Our Blog</Link>
+                                <Link to="#">Read Our Blog</Link>
                             </li>
                             <li>
-                                <Link to="/login">Sign up to deliver</Link>
+                                <Link to="#">Sign up to deliver</Link>
                             </li>
                             <li>
-                                <Link to="/restaurant">Add your restaurant</Link>
+                                <Link to="#">Add your restaurant</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="col-6 col-md-3">
                         <ul className="list-unstyled">
                             <li>
-                                <Link to="/help">Get Help</Link>
+                                <Link to="#">Get Help</Link>
                             </li>
                             <li>
-                                <Link to="/faq">Read FAQ</Link>
+                                <Link to="#">Read FAQ</Link>
                             </li>
                             <li>
-                                <Link to="/cities">View All Cities</Link>
+                                <Link to="#">View All Cities</Link>
                             </li>
                             <li>
-                                <Link to="/restaurant">Restaurants near me</Link>
+                                <Link to="#">Restaurants near me</Link>
                             </li>
                         </ul>
                     </div>
