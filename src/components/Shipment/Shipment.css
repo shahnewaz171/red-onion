@@ -17,11 +17,10 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-.shipment-img{
-    background-image: url(../../images/signup-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90vh;
-    background-position: bottom;
-    box-sizing: border-box;
+.checkout-item-button{
+  width: 70px;
+}
+.restaurant-info p{
+  line-height: 1;
+  font-weight: 450;
 }

@@ -1,0 +1,41 @@
+.shipment-details-card{
+    background-color: #f5f5f5;
+}
+
+.location-info{
+    
+    color: #000;
+    font-weight: 500;
+    padding: 51px;
+    border-radius: 10px;
+}
+.location-info h5{
+    font-size: 18px;
+    margin-left: 1rem;
+}
+.MuiTimeline-root{
+    background-color: white;
+    padding: 0px 0px !important;
+    justify-content: center !important;
+    align-items: end !important;
+}
+.MuiTimelineItemStyle{
+    min-height: 0px !important;
+}
+.content{
+    font-size: 18px;
+}
+.MuiTimelineContent-root {
+    padding: 1px 16px !important;
+}
+.MuiTimelineItem-missingOppositeContent:before{
+    padding: 6px 0px;
+}
+.MuiTimelineDot-defaultGrey {
+    color: white !important;
+    border-color: #ec1842 !important;
+    background-color: #f91944 !important;
+}
+.rounded{
+    border-radius: 10px !important;
+}

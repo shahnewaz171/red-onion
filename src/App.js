@@ -6,6 +6,7 @@ import FoodDetails from "./components/FoodDetails/FoodDetails";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Shipment from "./components/Shipment/Shipment";
+import ShipmentDetails from "./components/ShipmentDetails/ShipmentDetails";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/shipment">
           <Shipment />
+        </Route>
+        <Route path="/shipmentDetails">
+          <ShipmentDetails />
         </Route>
         <Route path="/food/:foodKey">
           <FoodDetails />

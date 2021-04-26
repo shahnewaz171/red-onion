@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Food = (props) => {
-    const {name, img, img2, foodDescription, price} = props.food;
+    const {name, img, img2, foodDescription, price, key} = props.food;
     
     return (
         <div className="container mb-5 single-food-card">
@@ -27,7 +27,7 @@ const Food = (props) => {
                             <FontAwesomeIcon icon={faShoppingCart} />
                             <span className="ms-1">Add</span>
                         </button>
-                        <Link to="/shipment"><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
+                        <Link to={`/shipment/${key}`}><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
                     </div>
                     <div className="more-images mt-5 mb-5">
                         <img src={img} className="active-single-img small-img" height="150px" alt="img"/>
