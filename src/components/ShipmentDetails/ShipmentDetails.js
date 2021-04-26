@@ -4,12 +4,13 @@ import map from '../../images/orderComplete.png';
 import deliveryImg from '../../images/other-images/delivery-person.png';
 import personLogo from '../../images/other-images/person-logo.png';
 import './ShipmentDetails.css';
+import Footer from '../Footer/Footer';
 
 const ShipmentDetails = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="container mb-5 single-food-card">
+            <div className="container mb-5 single-food-card pb-4">
                 <div className="row">
                     <div className="col-md-7 mb-5">
                         <div style={{cursor: 'pointer'}}>
@@ -45,11 +46,12 @@ const ShipmentDetails = () => {
                                    <p>Your Rider</p>
                                </div>
                            </div>
-                           <button className="btn btn-block my-3 btn-danger ">Contact</button>
+                           <button className="btn btn-block my-3 btn-danger">Contact</button>
                        </div>
                     </div>
                 </div>
             </div>
+            {<Footer></Footer>}
         </div>
     );
 };

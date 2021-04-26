@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './Shipment.css';
 import img from '../../images/Breakfast/bagel-and-cream-cheese.png';
+import Footer from '../Footer/Footer';
 
 const Shipment = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -81,11 +82,12 @@ const Shipment = () => {
                                 <span>Total :</span>
                                 <span>$327</span>
                             </p>
-                            <Link to="/shipmentDetails"><button className="btn btn-block btn-secondary mt-3">Place Order</button></Link>
+                            <Link to="/shipmentDetails"><button className="btn btn-block btn-secondary mt-3 mb-4">Place Order</button></Link>
                         </div>
                     </div>
                 </div>
             </div>
+            {<Footer></Footer>}
         </div>
     );
 };
