@@ -5,7 +5,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
@@ -17,6 +17,7 @@ const Navbar = () => {
         }
     }
     window.addEventListener('scroll', changeBackground);
+
 
     return (
         <nav className={navbar ? "navbar navbar-expand-lg navbar-light nav-pad sticky-top nav-shadow" : "navbar navbar-expand-lg navbar-light nav-pad"}>
@@ -32,6 +33,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="#" className="cartIcon">
                                 <FontAwesomeIcon icon={faShoppingCart} />
+                                <span className="text-danger"></span>
                             </Link>
                         </li>
                         <li className="nav-item">

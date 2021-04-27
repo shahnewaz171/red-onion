@@ -7,19 +7,18 @@ import './FoodDetails.css';
 
 const FoodDetails = () => {
     const {foodKey} = useParams();
-    const [foods, setFoods] = useState([]);
+    const [food, setFood] = useState([]);
     const data = fakeData;
     
     useEffect(() => {
         const singleFood = data.find(fd => fd.key === foodKey);
-        setFoods(singleFood);
+        setFood(singleFood);
     }, [foodKey, data])
 
-   
     return (
         <div>
-            <Navbar></Navbar>
-            <Food food={foods}></Food>
+            <Navbar food={food}></Navbar>
+            <Food food={food}></Food>
         </div>
     );
 };

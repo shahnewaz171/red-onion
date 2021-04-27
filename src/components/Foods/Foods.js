@@ -11,8 +11,17 @@ const Foods = () => {
     useEffect(() => {
         setFoods(fakeData);
     }, [])
+    const handleAddFoods = () => {
+        fetch('http://localhost:5000/addFoods', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(fakeData)
+        })
+    }
 
-    const selectedFoods = foods.filter(food => food.category === foodType).slice(0, 6);
+    // const selectedFoods = foods.filter(food => food.category === foodType).slice(0, 6);
 
     return (
         <div className="container mt-4 mb-5">
@@ -37,8 +46,9 @@ const Foods = () => {
             </nav>
 
             <div className="row my-5 pt-2">
+                <button onClick={handleAddFoods}>Add Foods</button>
                 {
-                    selectedFoods.map(food => <FoodItem food={food} key={food.key}></FoodItem>)
+                    // selectedFoods.map(food => <FoodItem food={food} key={food.key}></FoodItem>)
                 }
             </div>
 

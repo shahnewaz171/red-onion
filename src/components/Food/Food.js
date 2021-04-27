@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 
 const Food = (props) => {
     const {name, img, img2, foodDescription, price, key} = props.food;
+    const [quantity, setQuantity] = useState(1);
     
     return (
         <div>
@@ -19,9 +20,9 @@ const Food = (props) => {
                         <div className="d-flex mb-4 align-items-center">
                             <h2>${price}</h2>
                             <div className="item-count ms-5 btn">
-                                <button className="minus-btn">-</button>
-                                <input className="counter-field" type="text" value="1" disabled/>
-                                <button className="plus-btn">+</button>
+                                <button onClick={() => setQuantity (quantity <=1 ? quantity : quantity - 1)} className="minus-btn">-</button>
+                                <span>{quantity}</span>
+                                <button onClick={() => setQuantity(quantity + 1)} className="plus-btn">+</button>
                             </div>
                         </div>
                         <div className="action d-flex align-items-center pb-4">
