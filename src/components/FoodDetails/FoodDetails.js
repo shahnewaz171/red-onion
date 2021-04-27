@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import fakeData from '../../demoData';
 import Food from '../Food/Food';
-import Navbar from '../Navbar/Navbar';
 import './FoodDetails.css';
 
-const FoodDetails = () => {
+const FoodDetails = (props) => {
     const {foodKey} = useParams();
-    const [food, setFood] = useState([]);
-    const data = fakeData;
+    const [singleFood, setSingleFood] = useState([]);
     
     useEffect(() => {
-        const singleFood = data.find(fd => fd.key === foodKey);
-        setFood(singleFood);
-    }, [foodKey, data])
-
+        fetch("http://localhost:5000/singleFood/"+ foodKey)
+        .then(res => res.json())
+        .then(data => {
+            setSingleFood(data);
+        })
+    }, [foodKey])
+    console.log(singleFood);
     return (
         <div>
-            <Navbar food={food}></Navbar>
-            <Food food={food}></Food>
+            <Food food={singleFood} handleFoodCart={props.handleFoodCart} ></Food>
         </div>
     );
 };

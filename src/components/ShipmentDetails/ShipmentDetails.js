@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
 import map from '../../images/orderComplete.png';
 import deliveryImg from '../../images/other-images/delivery-person.png';
 import personLogo from '../../images/other-images/person-logo.png';
@@ -9,7 +8,6 @@ import Footer from '../Footer/Footer';
 const ShipmentDetails = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <div className="container mb-5 single-food-card pb-4">
                 <div className="row">
                     <div className="col-md-7 mb-5">

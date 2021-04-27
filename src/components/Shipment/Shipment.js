@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import './Shipment.css';
 import img from '../../images/Breakfast/bagel-and-cream-cheese.png';
 import Footer from '../Footer/Footer';
@@ -11,7 +10,6 @@ const Shipment = () => {
     const onSubmit = data => console.log(data);
     return (
         <div>
-            <Navbar></Navbar>
             <div className="shipment container my-5">
                 <div className="row">
                     <div className="col-md-5 mb-5">

@@ -10,7 +10,7 @@ const Login = () => {
     return (
         <div className="main">
             <div className="logo text-center mt-5 pt-4 pb-3">
-                <Link to="/home"><img src={logo} alt="logo" className="img-fluid"/></Link>
+                <Link to="/"><img src={logo} alt="logo" className="img-fluid"/></Link>
             </div>
             <div className="log-in">
                 <div className="container">

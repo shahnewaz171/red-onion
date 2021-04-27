@@ -22,7 +22,7 @@ const Navbar = (props) => {
     return (
         <nav className={navbar ? "navbar navbar-expand-lg navbar-light nav-pad sticky-top nav-shadow" : "navbar navbar-expand-lg navbar-light nav-pad"}>
             <div className="container">
-                <Link className="navbar-brand" to="/home">
+                <Link className="navbar-brand" to="/">
                     <img src={logo} className="img-fluid" alt="logo"/>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <Link to="#" className="cartIcon">
                                 <FontAwesomeIcon icon={faShoppingCart} />
-                                <span className="text-danger"></span>
+                                <span className="text-danger ms-1 food-length">{props.cart.length}</span>
                             </Link>
                         </li>
                         <li className="nav-item">

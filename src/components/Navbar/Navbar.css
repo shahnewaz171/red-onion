@@ -37,3 +37,7 @@
 .navbar{
     border-bottom: 1px solid #efeeee;
 }
+.food-length{
+    font-weight: bold;
+    font-size: 17px;
+}

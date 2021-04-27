@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 
 
 const Food = (props) => {
-    const {name, img, img2, foodDescription, price, key} = props.food;
+    const {name, img, img2, foodDescription, price, _id} = props.food;
     const [quantity, setQuantity] = useState(1);
     
     return (
@@ -18,7 +18,7 @@ const Food = (props) => {
                         <h1>{name}</h1>
                         <p className="mb-4" style={{marginTop: '2rem'}}>{foodDescription}</p>
                         <div className="d-flex mb-4 align-items-center">
-                            <h2>${price}</h2>
+                            <h2>${(price*quantity).toFixed(2)}</h2>
                             <div className="item-count ms-5 btn">
                                 <button onClick={() => setQuantity (quantity <=1 ? quantity : quantity - 1)} className="minus-btn">-</button>
                                 <span>{quantity}</span>
@@ -26,11 +26,11 @@ const Food = (props) => {
                             </div>
                         </div>
                         <div className="action d-flex align-items-center pb-4">
-                            <button className="btn btn-style px-3">
+                            <button onClick={() => props.handleFoodCart(props.food)} className="btn btn-style px-3">
                                 <FontAwesomeIcon icon={faShoppingCart} />
                                 <span className="ms-1">Add</span>
                             </button>
-                            <Link to={`/shipment/${key}`}><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
+                            <Link to={`/shipment/${_id}`}><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
                         </div>
                         <div className="more-images mt-5 mb-5">
                             <img src={img} className="active-single-img small-img" height="150px" alt="img"/>
