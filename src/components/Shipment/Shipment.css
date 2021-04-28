@@ -24,3 +24,10 @@ input[type=number] {
   line-height: 1;
   font-weight: 450;
 }
+.orderBtn{
+  color: #f91944;
+  font-size: 14px
+}
+.orderBtn:hover{
+  color: #d6133a;
+}

@@ -6,7 +6,8 @@ import './FoodDetails.css';
 const FoodDetails = (props) => {
     const {foodKey} = useParams();
     const [singleFood, setSingleFood] = useState([]);
-    
+    const cartId = props.cart[0];
+
     useEffect(() => {
         fetch("http://localhost:5000/singleFood/"+ foodKey)
         .then(res => res.json())
@@ -14,9 +15,10 @@ const FoodDetails = (props) => {
             setSingleFood(data);
         })
     }, [foodKey])
+    
     return (
         <div>
-            <Food food={singleFood} cart={props.cart} handleCart={props.handleCart}></Food>
+            <Food food={singleFood} cartId={cartId} cart={props.cart} handleCart={props.handleCart}></Food>
         </div>
     );
 };

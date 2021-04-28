@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './Food.css';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 const Food = (props) => {
     const {name, img, img2, foodDescription, price, _id} = props.food;
     const [quantity, setQuantity] = useState(1);
+
     
     return (
         <div>
@@ -26,11 +27,16 @@ const Food = (props) => {
                             </div>
                         </div>
                         <div className="action d-flex align-items-center pb-4">
-                            <button onClick={() => props.handleCart(props.food, quantity)} className="btn btn-style px-3">
+                            <button disabled={props.cart.length > 0 } onClick={() => props.handleCart(props.food, quantity)} className="btn btn-style px-3">
                                 <FontAwesomeIcon icon={faShoppingCart} />
-                                <span className="ms-1">Add</span>
+                                <span className="ms-1">Add to cart</span>
                             </button>
-                            <Link to={`/shipment/${_id}`}><button className="btn btn-style px-3 ms-4">Proceed Checkout</button></Link>
+                            <Link to={`/shipment/${_id}`}>
+                                {
+                                    props.cart.length > 0 ? <button className="btn btn-style px-3 ms-5">Proceed Checkout</button> 
+                                    : <button disabled className="btn btn-style px-3 ms-5">Proceed Checkout</button> 
+                                }
+                            </Link>
                         </div>
                         <div className="more-images mt-5 mb-5">
                             <img src={img} className="active-single-img small-img" height="150px" alt="img"/>

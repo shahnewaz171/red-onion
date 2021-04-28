@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home/Home';
 import './App.css';
-import { getDatabaseCart, addToDatabaseCart } from './utilities/databaseManager';
+import { getDatabaseCart, addToDatabaseCart, removeFromDatabaseCart } from './utilities/databaseManager';
 import FoodDetails from "./components/FoodDetails/FoodDetails";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
@@ -16,7 +16,6 @@ import Foods from "./components/Foods/Foods";
 function App() {
   const [cart , setCart] = useState([]);
   const [foods, setFoods] = useState([]);
-  const [cart2, setCart2] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/foods')
@@ -36,7 +35,6 @@ function App() {
         return food;
       })
       setCart(cardFoods);
-      setCart2(cardFoods);
     }
   }, [])
 
@@ -61,13 +59,20 @@ function App() {
     const newCart = cart.filter(el => el.id !== food._id);
     
     setCart([...newCart, {
-        _id: food._id,
+        id: food._id,
         name: food.name,
         img: food.img,
         price: food.price,
         quantity: quantity
     }])
     setFoods(food.type)
+  }
+  //remove product 
+  const removeProduct = (foodKey) => {
+    // console.log('Clicked', productKey);
+    const newCart = cart.filter(fd =>fd.key !== foodKey);
+    setCart(newCart);
+    removeFromDatabaseCart(foodKey);
   }
 
   return (
@@ -81,7 +86,7 @@ function App() {
         </Route>
         <Route path="/shipment/:foodKey">
           <Navbar cart={cart} />
-          <Shipment cart={cart} />
+          <Shipment cart={cart} handleCart={handleCart} removeProduct={removeProduct} />
         </Route>
         <Route path="/shipmentDetails">
           <Navbar cart={cart} />
