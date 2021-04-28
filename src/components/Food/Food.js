@@ -26,7 +26,7 @@ const Food = (props) => {
                             </div>
                         </div>
                         <div className="action d-flex align-items-center pb-4">
-                            <button onClick={() => props.handleFoodCart(props.food)} className="btn btn-style px-3">
+                            <button onClick={() => props.handleCart(props.food, quantity)} className="btn btn-style px-3">
                                 <FontAwesomeIcon icon={faShoppingCart} />
                                 <span className="ms-1">Add</span>
                             </button>

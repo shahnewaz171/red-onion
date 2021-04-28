@@ -16,6 +16,7 @@ import Foods from "./components/Foods/Foods";
 function App() {
   const [cart , setCart] = useState([]);
   const [foods, setFoods] = useState([]);
+  const [cart2, setCart2] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/foods')
@@ -35,6 +36,7 @@ function App() {
         return food;
       })
       setCart(cardFoods);
+      setCart2(cardFoods);
     }
   }, [])
 
@@ -55,6 +57,19 @@ function App() {
     addToDatabaseCart(food.id, count);
   }
 
+  const handleCart = (food, quantity) => {
+    const newCart = cart.filter(el => el.id !== food._id);
+    
+    setCart([...newCart, {
+        _id: food._id,
+        name: food.name,
+        img: food.img,
+        price: food.price,
+        quantity: quantity
+    }])
+    setFoods(food.type)
+  }
+
   return (
     <Router>
       <Switch>
@@ -64,9 +79,9 @@ function App() {
           <Foods  handleFoodCart={handleFoodCart} cart={cart}></Foods>
           <Home />
         </Route>
-        <Route path="/shipment">
+        <Route path="/shipment/:foodKey">
           <Navbar cart={cart} />
-          <Shipment />
+          <Shipment cart={cart} />
         </Route>
         <Route path="/shipmentDetails">
           <Navbar cart={cart} />
@@ -74,7 +89,7 @@ function App() {
         </Route>
         <Route path="/food/:foodKey">
           <Navbar cart={cart} />
-          <FoodDetails handleFoodCart={handleFoodCart} cart={cart}/>
+          <FoodDetails handleCart={handleCart} cart={cart}/>
         </Route>
         <Route path="/login">
           <Login />

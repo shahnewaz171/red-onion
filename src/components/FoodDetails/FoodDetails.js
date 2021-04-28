@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import fakeData from '../../demoData';
 import Food from '../Food/Food';
 import './FoodDetails.css';
 
@@ -15,10 +14,9 @@ const FoodDetails = (props) => {
             setSingleFood(data);
         })
     }, [foodKey])
-    console.log(singleFood);
     return (
         <div>
-            <Food food={singleFood} handleFoodCart={props.handleFoodCart} ></Food>
+            <Food food={singleFood} cart={props.cart} handleCart={props.handleCart}></Food>
         </div>
     );
 };

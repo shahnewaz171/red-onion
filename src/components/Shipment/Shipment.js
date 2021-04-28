@@ -1,18 +1,41 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import {useForm } from 'react-hook-form';
 import './Shipment.css';
-import img from '../../images/Breakfast/bagel-and-cream-cheese.png';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Footer from '../Footer/Footer';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import ShipmentFood from '../ShipmentFood/ShipmentFood';
 
-const Shipment = () => {
+const Shipment = (props) => {
+    const {foodKey} = useParams()
+    const [singleFood, setSingleFood] = useState([]);
+    const [orderSuccess, setOrderSuccess] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const [orderData, setOrderData] = useState(null);
+    const cartInfo = props.cart;
+    
+    useEffect(() => {
+        fetch("http://localhost:5000/singleFood/"+ foodKey)
+        .then(res => res.json())
+        .then(data => {
+            setSingleFood(data);
+        })
+    }, [foodKey])
+
+    const onSubmit = data => {
+        setOrderData(data);
+    };
+
+    const handlePaymentSuccess = paymentId => {
+        const orderDetails = {food: singleFood, order: orderData, orderTime: new Date(), paymentId};
+        console.log(orderDetails);
+    }
     return (
         <div>
             <div className="shipment container my-5">
                 <div className="row">
-                    <div className="col-md-5 mb-5">
+                    <div className="col-md-5 mb-5" style={{display: orderData ? 'none': 'block'}}>
                         <h4 className="pt-0">Edit Delivery Details</h4>
                         <hr/>
                         <form onSubmit={handleSubmit(onSubmit)} className="pt-4">
@@ -41,7 +64,14 @@ const Shipment = () => {
                                 <input type="submit" className="btn login-btn btn-block" value="Proceed to pay"/>
                             </div>
                         </form>
-                    </div>    
+                    </div>   
+
+                    <div className="col-md-5 mb-5" style={{display: orderData ? 'block': 'none'}}>
+                        <h4 className="pt-0">Payment Method</h4>
+                        <hr/>
+                        <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
+                    </div>
+                    
                     <div className="offset-md-2 col-md-5">
                         <div className="restaurant-info mb-2">
                             <p>
@@ -50,22 +80,12 @@ const Shipment = () => {
                             <p>Arriving in 20-30 min</p>
                             <p>107 Rd No 9</p>
                         </div>
-                        <div className="single-checkout-item mb-3 bg-light rounded d-flex align-items-center justify-content-between p-3">
-                            <img src={img} width="100px" alt="img"/>
-                            <div>
-                                <h6>Bagel And Cream Cheese</h6>
-                                <h4>$ <span className="text-danger">9.50</span></h4>
-                                <p style={{color: "#a5a3a3"}}>Delivery free</p>
-                            </div>
-                            <div className="checkout-item-button ml-3 btn">
-                                <button className="btn font-weight-bolder">-</button>
-                                <button className="btn bg-white rounded">1</button>
-                                <button className="btn font-weight-bolder">+</button>
-                            </div>
-                        </div>
+                        {
+                            cartInfo.map(cart => <ShipmentFood cartInfo={cart} key={cart._id}></ShipmentFood>)
+                        }
                         <div className="mt-4">
                             <p className="d-flex justify-content-between">
-                                <span>Subtotal : (4 item)</span>
+                                <span>Subtotal : ({cartInfo.length} item)</span>
                                 <span>$18.00</span>
                             </p>
                             <p className="d-flex justify-content-between">
@@ -80,7 +100,7 @@ const Shipment = () => {
                                 <span>Total :</span>
                                 <span>$327</span>
                             </p>
-                            <Link to="/shipmentDetails"><button className="btn btn-block btn-secondary mt-3 mb-4">Place Order</button></Link>
+                            <Link to="/shipmentDetails"><button className="btn btn-block login-btn mt-3 mb-4">Place Order</button></Link>
                         </div>
                     </div>
                 </div>

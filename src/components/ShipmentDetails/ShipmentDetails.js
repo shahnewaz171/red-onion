@@ -44,7 +44,7 @@ const ShipmentDetails = () => {
                                    <p>Your Rider</p>
                                </div>
                            </div>
-                           <button className="btn btn-block my-3 btn-danger">Contact</button>
+                           <button className="btn btn-block my-3 login-btn">Contact</button>
                        </div>
                     </div>
                 </div>

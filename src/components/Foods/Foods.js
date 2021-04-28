@@ -40,7 +40,7 @@ const Foods = (props) => {
 
             <div className="row my-5 pt-2">
                 {
-                    selectedFoods.map(food => <FoodItem food={food} key={food.key}></FoodItem>)
+                    selectedFoods.map(food => <FoodItem food={food} key={food.key} cart={props.cart}></FoodItem>)
                 }
             </div>
 

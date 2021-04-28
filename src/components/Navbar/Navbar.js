@@ -18,7 +18,6 @@ const Navbar = (props) => {
     }
     window.addEventListener('scroll', changeBackground);
 
-
     return (
         <nav className={navbar ? "navbar navbar-expand-lg navbar-light nav-pad sticky-top nav-shadow" : "navbar navbar-expand-lg navbar-light nav-pad"}>
             <div className="container">
