@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Food from '../Food/Food';
+import Footer from '../Footer/Footer';
 import './FoodDetails.css';
 
 const FoodDetails = (props) => {
@@ -19,6 +20,7 @@ const FoodDetails = (props) => {
     return (
         <div>
             <Food food={singleFood} cartId={cartId} cart={props.cart} handleCart={props.handleCart}></Food>
+            <Footer></Footer>
         </div>
     );
 };

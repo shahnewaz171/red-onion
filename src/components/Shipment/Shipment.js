@@ -14,7 +14,6 @@ const Shipment = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [orderData, setOrderData] = useState(null);
     const cartInfo = props.cart;
-    const singleCart = props.cart[0];
 
     useEffect(() => {
         fetch("http://localhost:5000/singleFood/"+ foodKey)
@@ -29,7 +28,7 @@ const Shipment = (props) => {
     };
 
     const handlePaymentSuccess = paymentId => {
-        const orderDetails = {food: cartInfo, order: orderData, orderTime: new Date(), paymentId};
+        const orderDetails = {food: singleFood, order: orderData, orderTime: new Date(), paymentId};
         console.log(orderDetails);
         setOrderSuccess(true);
     }
@@ -122,10 +121,10 @@ const Shipment = (props) => {
                             cartInfo.map(cart => <ShipmentFood cartInfo={cart} key={cart.id} handleCart={props.handleCart} removeProduct={props.removeProduct}></ShipmentFood>)
                         }
                         <div className="mt-4">
-                            <p className="d-flex justify-content-between">
+                           {cartInfo.length > 1 && <p className="d-flex justify-content-between">
                                 <span>Subtotal : ({food.quantity} item)</span>
                                 <span>${(total).toFixed(2)}</span>
-                            </p>
+                            </p>}
                             <p className="d-flex justify-content-between">
                                 <span>Tax :</span>
                                 <span>${(tax).toFixed(2)}</span>
@@ -138,7 +137,8 @@ const Shipment = (props) => {
                                 <span>Total :</span>
                                 <span>${grandTotal}</span>
                             </p>
-                            <Link to="/shipmentDetails"><button disabled={!orderSuccess}  className="btn d-block login-btn mt-3 mb-4">Place Order</button></Link>
+                            {orderSuccess && <Link to="/shipmentDetails"><button className="btn d-block login-btn mt-3 mb-4">Place Order</button></Link>}
+                            {!orderSuccess && <button disabled className="btn d-block login-btn mt-3 mb-4">Place Order</button>}
                         </div>
                     </div>
                 </div>

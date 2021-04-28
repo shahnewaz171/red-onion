@@ -14,7 +14,7 @@ import Foods from "./components/Foods/Foods";
 
 
 function App() {
-  const [cart , setCart] = useState([]);
+  const [cart , setCart] = useState(sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):[]);
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
@@ -60,6 +60,7 @@ function App() {
     
     setCart([...newCart, {
         id: food._id,
+        key: food.key,
         name: food.name,
         img: food.img,
         price: food.price,
@@ -94,7 +95,7 @@ function App() {
         </Route>
         <Route path="/food/:foodKey">
           <Navbar cart={cart} />
-          <FoodDetails handleCart={handleCart} cart={cart}/>
+          <FoodDetails handleCart={handleCart} cart={cart} />
         </Route>
         <Route path="/login">
           <Login />

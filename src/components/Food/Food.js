@@ -9,7 +9,6 @@ import Footer from '../Footer/Footer';
 const Food = (props) => {
     const {name, img, img2, foodDescription, price, _id} = props.food;
     const [quantity, setQuantity] = useState(1);
-
     
     return (
         <div>
@@ -27,7 +26,7 @@ const Food = (props) => {
                             </div>
                         </div>
                         <div className="action d-flex align-items-center pb-4">
-                            <button disabled={props.cart.length > 0 } onClick={() => props.handleCart(props.food, quantity)} className="btn btn-style px-3">
+                            <button onClick={() => props.handleCart(props.food, quantity)} className="btn btn-style px-3">
                                 <FontAwesomeIcon icon={faShoppingCart} />
                                 <span className="ms-1">Add to cart</span>
                             </button>
@@ -51,7 +50,7 @@ const Food = (props) => {
                     </div>
                 </div>
             </div>
-            {<Footer></Footer>}
+            
         </div>
     );
 };
