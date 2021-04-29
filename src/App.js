@@ -19,7 +19,7 @@ function App() {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/foods')
+    fetch('https://sleepy-woodland-45308.herokuapp.com/foods')
     .then(res => res.json())
     .then(data => {
         setFoods(data);

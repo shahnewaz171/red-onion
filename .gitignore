@@ -2,7 +2,8 @@
 
 #others
 firebase.config.js
-
+/ProcessPayment.js
+firebase-debug.log
 # dependencies
 /node_modules
 /.pnp

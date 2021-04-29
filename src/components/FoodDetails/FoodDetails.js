@@ -10,7 +10,7 @@ const FoodDetails = (props) => {
     const cartId = props.cart[0];
 
     useEffect(() => {
-        fetch("http://localhost:5000/singleFood/"+ foodKey)
+        fetch("https://sleepy-woodland-45308.herokuapp.com/singleFood/"+ foodKey)
         .then(res => res.json())
         .then(data => {
             setSingleFood(data);

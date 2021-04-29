@@ -24,7 +24,7 @@ const Shipment = (props) => {
     const [content, setContent] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/singleFood/"+ foodKey)
+        fetch("https://sleepy-woodland-45308.herokuapp.com/singleFood/"+ foodKey)
         .then(res => res.json())
         .then(data => {
             setSingleFood(data);
@@ -37,7 +37,7 @@ const Shipment = (props) => {
 
     const handlePaymentSuccess = paymentId => {
         const orderDetails = {email: auth.user.email, food: singleFood, order: orderData, paymentId, date: new Date()};
-        fetch("http://localhost:5000/placeOrder", {
+        fetch("https://sleepy-woodland-45308.herokuapp.com/placeOrder", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
