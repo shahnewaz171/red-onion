@@ -15,6 +15,7 @@ const Foods = (props) => {
         })
     }, [])
     const selectedFoods = foods.filter(food => food.category === foodType).slice(0, 6);
+    const cart = props.cart[0];
 
     return (
         <div className="container mt-4 mb-5">
@@ -40,13 +41,13 @@ const Foods = (props) => {
 
             <div className="row my-5 pt-2">
                 {
-                    selectedFoods.map(food => <FoodItem food={food} key={food.key} cart={props.cart}></FoodItem>)
+                    selectedFoods.map(food => <FoodItem food={food} key={food.key} handleFoodCart={props.handleFoodCart} cart={props.cart}></FoodItem>)
                 }
             </div>
 
             <div className="text-center pb-4">
                 {
-                    props.cart.length ? <button  className="btn btn-style">Checkout Your Food</button>
+                    props.cart.length ? <Link to="#"><button  className="btn btn-style">Checkout Your Food</button></Link>
                     : <button disabled className="btn btn-secondary">Checkout Your Food</button>
                 }
             </div>

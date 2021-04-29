@@ -31,7 +31,7 @@ const ShipmentDetails = () => {
                                     </div>
                                     <div>
                                         <h5>Shop Address</h5>
-                                        <p>Star Kabab and Restaurant</p>
+                                        <p>Newaz Dines, Dhaka</p>
                                     </div>
                                </div>
                            </div>
@@ -40,7 +40,7 @@ const ShipmentDetails = () => {
                            <div className="bg-white rounded p-3 d-flex align-items-center mb-4">
                                <img src={personLogo} className="mr-2" alt="person" style={{width: "18%"}}/>
                                <div className="ms-4">
-                                   <h6>Shahnewaz</h6>
+                                   <h6>MR. Rahim</h6>
                                    <p>Your Rider</p>
                                </div>
                            </div>

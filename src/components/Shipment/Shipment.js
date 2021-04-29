@@ -6,6 +6,11 @@ import Footer from '../Footer/Footer';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import ShipmentFood from '../ShipmentFood/ShipmentFood';
+import { useAuth } from '../Login/UseAuth';
+import map from '../../images/orderComplete.png';
+import deliveryImg from '../../images/other-images/delivery-person.png';
+import personLogo from '../../images/other-images/person-logo.png';
+import '../ShipmentDetails/ShipmentDetails.css';
 
 const Shipment = (props) => {
     const {foodKey} = useParams();
@@ -14,6 +19,9 @@ const Shipment = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [orderData, setOrderData] = useState(null);
     const cartInfo = props.cart;
+    const auth = useAuth();
+    const [orderId, setOrderId] = useState(null);
+    const [content, setContent] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:5000/singleFood/"+ foodKey)
@@ -28,9 +36,23 @@ const Shipment = (props) => {
     };
 
     const handlePaymentSuccess = paymentId => {
-        const orderDetails = {food: singleFood, order: orderData, orderTime: new Date(), paymentId};
-        console.log(orderDetails);
-        setOrderSuccess(true);
+        const orderDetails = {email: auth.user.email, food: singleFood, order: orderData, paymentId, date: new Date()};
+        fetch("http://localhost:5000/placeOrder", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails)
+        })
+        .then(res => res.json())
+        .then(order => {
+            if(order){
+                setOrderSuccess(true);
+                console.log('from database', order._id);
+                setOrderId(order);
+            }
+            console.log(order);
+        })
     }
     const cart = props.cart;
 
@@ -64,7 +86,7 @@ const Shipment = (props) => {
 
     return (
         <div>
-            <div className="shipment container my-5">
+            {!content && <div className="shipment container my-5" >
                 <div className="row">
                     <div className="col-md-5 mb-5" style={{display: orderData ? 'none': 'block'}}>
                         <h4 className="pt-0">Edit Delivery Details</h4>
@@ -118,7 +140,7 @@ const Shipment = (props) => {
                             <p>107 Rd No 9</p>
                         </div>
                         {
-                            cartInfo.map(cart => <ShipmentFood cartInfo={cart} key={cart.id} handleCart={props.handleCart} removeProduct={props.removeProduct}></ShipmentFood>)
+                            cartInfo.map(cart => <ShipmentFood orderId={orderId} cartInfo={cart} key={cart.key} handleCart={props.handleCart} removeProduct={props.removeProduct}></ShipmentFood>)
                         }
                         <div className="mt-4">
                            {cartInfo.length > 1 && <p className="d-flex justify-content-between">
@@ -137,12 +159,53 @@ const Shipment = (props) => {
                                 <span>Total :</span>
                                 <span>${grandTotal}</span>
                             </p>
-                            {orderSuccess && <Link to="/shipmentDetails"><button className="btn d-block login-btn mt-3 mb-4">Place Order</button></Link>}
+                            {orderSuccess && <button onClick={() => setContent(true)} className="btn d-block login-btn mt-3 mb-4">Place Order</button>}
                             {!orderSuccess && <button disabled className="btn d-block login-btn mt-3 mb-4">Place Order</button>}
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
+            {content && <div className="container mb-5 single-food-card pb-4">
+                <div className="row">
+                    <div className="col-md-7 mb-5">
+                        <div style={{cursor: 'pointer'}}>
+                            <img src={map} className="img-fluid" alt="map"/>
+                        </div>
+                    </div>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-4">
+                       <div className="bg-light p-4 rounded">
+                           <img src={deliveryImg} className="ms-5" alt="delivery"/>
+                           <div className="bg-white  rounded p-3 my-3">
+                               <div>
+                                   <div>
+                                       <h6>Order Id :</h6>
+                                       <p>{orderId._id}</p>
+                                   </div>
+                                    <div>
+                                        <h5>Your Location</h5>
+                                        <p>{orderId.order.address}</p>
+                                    </div>
+                                    <div>
+                                        <h5>Shop Address</h5>
+                                        <p>Newaz Dines, Dhaka</p>
+                                    </div>
+                               </div>
+                           </div>
+                           <h1>09.30</h1>
+                           <p>Estimated delivery time</p>
+                           <div className="bg-white rounded p-3 d-flex align-items-center mb-4">
+                               <img src={personLogo} className="mr-2" alt="person" style={{width: "18%"}}/>
+                               <div className="ms-4">
+                                   <h6>MR. Rahim</h6>
+                                   <p>Your Rider</p>
+                               </div>
+                           </div>
+                           <button className="btn btn-block my-3 login-btn">Contact</button>
+                       </div>
+                    </div>
+                </div>
+            </div>}
             {<Footer></Footer>}
         </div>
     );

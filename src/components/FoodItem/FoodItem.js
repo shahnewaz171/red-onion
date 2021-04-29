@@ -8,7 +8,7 @@ const FoodItem = (props) => {
 
     return (
         <div className="col-md-4 mb-4">
-            <Link to={`/food/${_id}`} className="food-link">
+            <Link onClick={() => props.handleFoodCart(props.food)} to={`/food/${_id}`} className="food-link">
                 <div className="card text-center">
                     <div className="card-img">
                         <img src={img} className="img-fluid card-img-top" alt="b1"></img>
