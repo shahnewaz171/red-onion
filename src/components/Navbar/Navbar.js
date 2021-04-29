@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../Login/UseAuth';
 
 const Navbar = (props) => {
+    const auth = useAuth();
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
@@ -35,13 +37,23 @@ const Navbar = (props) => {
                                 <span className="text-danger ms-1 food-length">{props.cart.length}</span>
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">
-                                <span>Login</span>
-                            </Link>
+                        <li className="">
+                            {auth.user ? 
+                                <Link className="nav-link px-0" to="#">
+                                    <span className="user-name">{auth.user.displayName}</span>
+                                </Link>
+                                :
+                                <Link className="nav-link log-link" to="/login">
+                                    <span>Login</span>
+                                </Link>
+                            }
                         </li>
                         <li className="nav-item">
-                            <Link to="/signup"><button className="btn btn-style px-4">Sign up</button></Link>
+                            {auth.user ?
+                                <Link to="/"><button onClick={() => {auth.signOut()}}  className="btn btn-style px-4">Sign out</button></Link>
+                                :
+                                <Link to="/login"><button className="btn btn-style px-4">Sign up</button></Link>
+                            }
                         </li>
                     </ul>
                 </div>

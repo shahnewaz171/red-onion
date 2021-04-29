@@ -11,6 +11,7 @@ import ShipmentDetails from "./components/ShipmentDetails/ShipmentDetails";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Foods from "./components/Foods/Foods";
+import { AuthContextProvider } from "./components/Login/UseAuth";
 
 
 function App() {
@@ -77,34 +78,35 @@ function App() {
   }
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Navbar cart={cart} />
-          <Header></Header>
-          <Foods  handleFoodCart={handleFoodCart} cart={cart}></Foods>
-          <Home />
-        </Route>
-        <Route path="/shipment/:foodKey">
-          <Navbar cart={cart} />
-          <Shipment cart={cart} handleCart={handleCart} removeProduct={removeProduct} />
-        </Route>
-        <Route path="/shipmentDetails">
-          <Navbar cart={cart} />
-          <ShipmentDetails />
-        </Route>
-        <Route path="/food/:foodKey">
-          <Navbar cart={cart} />
-          <FoodDetails handleCart={handleCart} cart={cart} />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <AuthContextProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Navbar cart={cart} />
+              <Header></Header>
+              <Foods  handleFoodCart={handleFoodCart} cart={cart}></Foods>
+              <Home />
+            </Route>
+            <Route path="/shipment/:foodKey">
+              <Navbar cart={cart} />
+              <Shipment cart={cart} handleCart={handleCart} removeProduct={removeProduct} />
+            </Route>
+            <Route path="/shipmentDetails">
+              <Navbar cart={cart} />
+              <ShipmentDetails />
+            </Route>
+            <Route path="/food/:foodKey">
+              <Navbar cart={cart} />
+              <FoodDetails handleCart={handleCart} cart={cart} />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          </Switch>
+        </Router>
+      </AuthContextProvider>
+    </div>
   );
 }
 

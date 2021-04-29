@@ -13,8 +13,12 @@
 .nav-link{
     margin: 0px 15px;
 }
-.nav-link span{
+.nav-item span{
     color: #000 !important;
+    font-weight: 600;
+    font-size: 18px;
+}
+.log-link span{
     font-weight: 600;
     font-size: 18px;
 }
@@ -24,7 +28,8 @@
     transition: all .3s;
 }
 .cartIcon:hover,
-.nav-link span:hover{
+.nav-item span:hover,
+.log-link span:hover{
     color: rgb(77, 76, 76) !important;
 }
 .nav-pad{
@@ -40,4 +45,9 @@
 .food-length{
     font-weight: bold;
     font-size: 17px;
+}
+.user-name{
+    color: gray !important;
+    font-size: 19px;
+    font-weight: 500;
 }
